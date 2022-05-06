@@ -10,7 +10,10 @@
   <body>
     <div class="navbar">
       <div class="container">
-        <a href="#">Luxe <span>3Sixty</span></a>
+        <a class="logo" href="#"
+          ><span style="font-family: IBM Plex Sans; color: black">LUXE </span
+          ><span style="font-family: Water Brush">3Sixty</span>
+        </a>
         <img
           style="width: 1em"
           id="mobile-cta"
@@ -23,7 +26,7 @@
           <img
             id="mobile-exit"
             class="mobile-menu-exit"
-            src="images/exit.svg"
+            src="images/exit-button.svg"
             alt="Close Navigation"
           />
 
@@ -31,7 +34,7 @@
             <li class="current"><a href="#">HOME</a></li>
             <li><a href="#">HOW IT WORKS</a></li>
             <li><a href="#">OUR TEAM</a></li>
-            <li class="go-premium-cta"><a href="#">BOOK THE BOOTH</a></li>
+            <li class="book-now-cta"><a href="#">BOOK THE BOOTH</a></li>
           </ul>
         </nav>
       </div>
@@ -42,13 +45,59 @@
         <img class="hero-img" src="images/hero-banner.jpg" alt="Banner" />
       </div>
     </section>
-    <section>
-      <div class="middle-block">
+    <section class="description">
+      <div class="container">
         <img src="images/motion-banner.png" alt="Motion Banner" />
       </div>
     </section>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <section class="testimonials-section">
+      <div class="container">
+        <ul>
+          <li>
+            <img src="images/person.jpg" alt="" />
+            <blockquote>
+              "This is exactly what we needed for our event. Thank you Luxe
+              3Sixty!"
+            </blockquote>
+            <cite>Jane Doe</cite>
+          </li>
+          <li>
+            <img src="images/person.jpg" alt="" />
+            <blockquote>
+              "This is exactly what we needed for our event. Thank you Luxe
+              3Sixty!"
+            </blockquote>
+            <cite>Jane Doe</cite>
+          </li>
+          <li>
+            <img src="images/person.jpg" alt="" />
+            <blockquote>
+              "This is exactly what we needed for our event. Thank you Luxe
+              3Sixty!"
+            </blockquote>
+            <cite>Jane Doe</cite>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      const mobileBtn = document.getElementById("mobile-cta");
+      nav = document.querySelector("nav");
+      mobileBtnExit = document.getElementById("mobile-exit");
+
+      mobileBtn.addEventListener("click", () => {
+        nav.classList.add("menu-btn");
+      });
+
+      mobileBtnExit.addEventListener("click", () => {
+        nav.classList.remove("menu-btn");
+      });
+    </script>
   </body>
+  <footer>
+    <div class="footer">
+      <div class="container"></div>
+    </div>
+  </footer>
 </html>
