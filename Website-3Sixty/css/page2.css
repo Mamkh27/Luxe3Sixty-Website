@@ -1,0 +1,44 @@
+.information-section{
+    background-color: #eaeaea;
+    padding-bottom: 3em;
+}  
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: inline;
+  }
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 3em;
+}
+.title{
+    margin: 1em;
+}
+.book-now-cta {
+        color: white;
+        background-color: blue;
+        border: 2px solid blue;
+        font-weight: bold;
+        border-radius: 5em;
+        margin-top: -.2em; 
+        padding: 0.5em;
+        margin-right: 0.5em;
+     
+     }
+
+     .button-options{
+      margin-top: 5em;
+      
+        
+     
+     }
+
+   .together{
+       margin-top: -1em;
+   }
+     .question-section{
+         margin-top:4em;
+     }
