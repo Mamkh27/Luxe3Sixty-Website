@@ -1,34 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=IBM+Plex+Sans:wght@100&family=Water+Brush&display=swap');
+:root {
+  --primary-color: #013498;
+}
+
+
 .information-section{
     background-color: #eaeaea;
     padding-bottom: 3em;
+    padding-top: 1em;
 }  
 img {
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    display: inline;
+  display: block;
+    width: 100%;
+
+
   }
 .list{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-inline: 3em;
 }
+
+.item { 
+  flex: 0 0 50%; 
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
 .title{
-    margin: 1em;
+  
+  display: block;
+  margin: 0;
+  padding: -50px;
+ margin-left: 1em;
+  
 }
-.book-now-cta {
+.try{
+  margin-top: -1em;
+}
+h2{
+  margin-top: -0.5em;
+}
+.book-now-cta-2 {
         color: white;
-        background-color: blue;
-        border: 2px solid blue;
-        font-weight: bold;
+        background-color: var(--primary-color);
         border-radius: 5em;
         margin-top: -.2em; 
-        padding: 0.5em;
+        padding:  0.5em 1.5em;
+        
         margin-right: 0.5em;
+        font-family: 'IBM Plex Sans';
+        text-decoration: none;
      
      }
-
+.cta-button{
+  margin-top: 2em;
+  margin-left: 1em;
+}
      .button-options{
       margin-top: 5em;
       
