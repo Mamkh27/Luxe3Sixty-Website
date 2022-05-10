@@ -67,12 +67,12 @@
   </div>
   <div class="button-options">
     <div class="container">
-      <button id="questionBtn" onclick="toggleQuestions();" >FAQ</button>
-      <button id="galleryBtn" onclick="toggleGallery()" >GALLERY</button>
+      <button class="btn" id="questionBtn" onclick="toggleQuestions();" >FAQ</button>
+      <button class="btn" id="galleryBtn" onclick="toggleGallery()" >GALLERY</button>
     </div>
     </div>
     <div class="dividers">
-    <hr class="FAQ-hr"><hr class="VIDEOS-hr">
+    <hr id="faq" class="FAQ-hr"><hr id="vid" class="VIDEOS-hr">
   </div>
   </div>
     <div class="question-section" >
@@ -138,6 +138,12 @@
     Gallery3.style.display = 'none';
     Gallery4.style.display = 'none';
     Gallery5.style.display = 'none';
+
+        
+    var faq = document.getElementById('faq');
+    var vid = document.getElementById('vid');
+    vid.style.border = '1px solid darkgray';
+    faq.style.border = '1px solid var(--primary-color)';
    
   }
   function toggleGallery(){
@@ -153,6 +159,11 @@
      Gallery3.style.display = 'block';
      Gallery4.style.display = 'block';
     Gallery5.style.display = 'block';
+    
+    var faq = document.getElementById('faq');
+    var vid = document.getElementById('vid');
+    faq.style.border = '1px solid darkgray';
+    vid.style.border = '1px solid var(--primary-color)';
 
  
   }

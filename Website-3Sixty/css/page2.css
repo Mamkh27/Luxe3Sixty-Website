@@ -131,3 +131,23 @@ p {
 .li {
   justify-content: center;
 }
+
+#gallery {
+  display: none;
+}
+#gallery2 {
+  display: none;
+}
+#gallery3 {
+  display: none;
+}
+#gallery4 {
+  display: none;
+}
+#gallery5 {
+  display: none;
+}
+
+.btn {
+  border-style: none;
+}
