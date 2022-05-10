@@ -81,3 +81,27 @@ hr {
 .question-section {
   margin-top: 4em;
 }
+
+.container-reels.heading {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-transform: capitalize;
+  color: darkgray;
+  font-family: Verdana;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.video-container .video {
+  height: 30rem;
+  width: 20rem;
+  margin: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 1rem;
+}
