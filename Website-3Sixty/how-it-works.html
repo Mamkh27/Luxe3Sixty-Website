@@ -98,25 +98,25 @@
           <p>We send out an online gallery in the next couple days after the event! So if the guests are not able to have the video airdropped to them during the event, we send out a link to the booking client.</p>
         </li>
       </ul>
- <div id="gallery"class="container-reels" >
-   <div class="video-container">
-    <div class="video"> 
+ <div class="container-reels" >
+   <div  class="video-container">
+    <div id="gallery" class="video"> 
       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel1.MP4"></video>
      </div>
    
-     <div class="video">
+     <div id="gallery2"class="video">
        <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;"src="images/reels/reel2.MP4"></video>
      </div>
  
-     <div class="video">
+     <div id="gallery3" class="video">
        <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel3.MP4"></video>
      </div>
  
-     <div class="video">
+     <div id="gallery4" class="video">
        <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel4.MP4"></video>
      </div>
  
-     <div class="video">
+     <div id="gallery5" class="video">
        <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel5.MP4"></video>
      </div>
 
@@ -126,34 +126,37 @@
 
   function toggleQuestions(){
     var Gallery = document.getElementById('gallery');
+    var Gallery2 = document.getElementById('gallery2');
+    var Gallery3 = document.getElementById('gallery3');
+    var Gallery4 = document.getElementById('gallery4');
+    var Gallery5 = document.getElementById('gallery5');
     var QuestionSet = document.getElementById('questions');
-    Gallery.style.display = 'none';
-   QuestionSet.style.display = 'block';
    
+   QuestionSet.style.display = 'block';
+   Gallery.style.display = 'none';
+    Gallery2.style.display = 'none';
+    Gallery3.style.display = 'none';
+    Gallery4.style.display = 'none';
+    Gallery5.style.display = 'none';
+   
+  }
+  function toggleGallery(){
+    var Gallery = document.getElementById('gallery');
+    var Gallery2 = document.getElementById('gallery2');
+    var Gallery3 = document.getElementById('gallery3');
+    var Gallery4 = document.getElementById('gallery4');
+    var Gallery5 = document.getElementById('gallery5');
+    var QuestionSet = document.getElementById('questions');
+    Gallery.style.display = 'block';
+    Gallery2.style.display = 'block';
+     Gallery3.style.display = 'block';
+     Gallery4.style.display = 'block';
+    Gallery5.style.display = 'block';
+ 
   }
  
 
-  function toggleGallery(){
-
-
-  //   var Gallery = document.getElementById('gallery');
-  //   var QuestionSet = document.getElementById('questions');
-
-  //  Gallery.style.display = 'block';
-  //  QuestionSet.style.display = 'none';
   
-  }
-  // window.onload = function(){
-  //   // var galleryButton = document.getElementById("galleryBtn");
-  //   // var Gallery = document.getElementById('gallery');
-  //   // var QuestionSet = document.getElementById('questions');
-  //   // galleryButton.onclick = function(){
-  //   //   //QuestionSet.style.display = 'none';
-    
-  //   //   Gallery.style.display = 'block';
-      
-  //   // }
-  // };
 </script>
   </body>
 
