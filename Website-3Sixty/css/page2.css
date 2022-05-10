@@ -103,5 +103,18 @@ hr {
   margin: 2rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+}
+.video-container .video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.video-container .video video:hover {
+  transition: 0.2s linear;
+  transform: scale(1.1);
 }
