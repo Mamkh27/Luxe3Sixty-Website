@@ -34,6 +34,9 @@ img {
 h2 {
   margin-top: -0.5em;
 }
+h4 {
+  color: rgb(114, 114, 114);
+}
 .book-now-cta-2 {
   color: white;
   background-color: var(--primary-color);
