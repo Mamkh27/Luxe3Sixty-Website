@@ -68,7 +68,7 @@
   <div class="button-options">
     <div class="container">
       <button id="questionBtn" onclick="toggleQuestions();" >FAQ</button>
-      <button id="galleryBtn" onclick="document.getElementById('questions').style.display='none';" >GALLERY</button>
+      <button id="galleryBtn" onclick="toggleGallery()" >GALLERY</button>
     </div>
     </div>
     <div class="dividers">
@@ -147,11 +147,13 @@
     var Gallery4 = document.getElementById('gallery4');
     var Gallery5 = document.getElementById('gallery5');
     var QuestionSet = document.getElementById('questions');
+    QuestionSet.style.display = 'none';
     Gallery.style.display = 'block';
     Gallery2.style.display = 'block';
      Gallery3.style.display = 'block';
      Gallery4.style.display = 'block';
     Gallery5.style.display = 'block';
+
  
   }
  
