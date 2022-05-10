@@ -118,3 +118,16 @@ hr {
   transition: 0.2s linear;
   transform: scale(1.1);
 }
+
+.Q {
+  font-weight: bold;
+  margin-left: 1em;
+}
+p {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.li {
+  justify-content: center;
+}

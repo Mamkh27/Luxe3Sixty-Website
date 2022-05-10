@@ -67,69 +67,94 @@
   </div>
   <div class="button-options">
     <div class="container">
-      <a href="#">FAQ</a>
-      <a href="#">VIDEOS</a>
+      <button id="questionBtn" onclick="toggleQuestions();" >FAQ</button>
+      <button id="galleryBtn" onclick="document.getElementById('questions').style.display='none';" >GALLERY</button>
     </div>
     </div>
     <div class="dividers">
     <hr class="FAQ-hr"><hr class="VIDEOS-hr">
   </div>
   </div>
-    <div class="question-section">
-      <ul>
+    <div class="question-section" >
+      <ul id="questions">
         <li>
-          Title 1
-          <p>Subtitle</p>
+           <p class="Q">Q: How does the video booth run?</p>
+          <p>The video booth is a platform with a high-res camera rotating a full 360 degrees around the subjects. Your guests can dance and show off their best moves while being captured in an epic way. The final result will be a 10-second video with some aspects of slow-motion and boomerang-style bounce back. These features can be customized to your liking!</p>
         </li>
         <li>
-          Title 1
-          <p>Subtitle</p>
+          <p class="Q">Q: Can we add songs to the background?</p>
+          <p>Yes! You may add a particular song that you would like added in the background of all of the videos. By DEFAULT, we leave out the song and have the guests add in their own song choice if they choose to post the clips on their social media. It allows for a bit of anticipation for our guests! </p>
         </li>
         <li>
-          Title 1
-          <p>Subtitle</p>
+         <p class="Q">Q: When do you arrive to the venue for set-up? </p>
+          <p>Our arrival time is 15-30 minutes before the official start-time. We will have everything set-up and ready for our party-goers by the time we are scheduled to start. </p>
         </li>
         <li>
-          Title 1
-          <p>Subtitle</p>
+          <p class="Q">Q: How many attendants come with the booking?</p>
+          <p>Two vetted and experienced attendants from our team will arrive with the booth. They will safely set up, operate, and take down the booth at the designated times. </p>
         </li>
         <li>
-          Title 1
-          <p>Subtitle</p>
-        </li>
-        <li>
-          Title 1
-          <p>Subtitle</p>
+          <p class="Q">Q: How do we recieve our videos?</p>
+          <p>We send out an online gallery in the next couple days after the event! So if the guests are not able to have the video airdropped to them during the event, we send out a link to the booking client.</p>
         </li>
       </ul>
- <div class="container-reels">
-   <div class="heading">Video Gallery</div>
+ <div id="gallery"class="container-reels" >
    <div class="video-container">
-
-    <div class="video">
-     <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel1.MP4"></video>
-    </div>
-
-    <div class="video">
-      <video onmouseover="this.play()"
-      onmouseout="this.pause();this.currentTime=0;"
-      src="images/reels/reel2.MP4"></video>
-    </div>
-
-    <div class="video">
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel3.MP4"></video>
-    </div>
-
-    <div class="video">
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel4.MP4"></video>
-    </div>
-
-    <div class="video">
-      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel5.MP4"></video>
-    </div>
+    <div class="video"> 
+      <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel1.MP4"></video>
+     </div>
+   
+     <div class="video">
+       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;"src="images/reels/reel2.MP4"></video>
+     </div>
+ 
+     <div class="video">
+       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel3.MP4"></video>
+     </div>
+ 
+     <div class="video">
+       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel4.MP4"></video>
+     </div>
+ 
+     <div class="video">
+       <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" src="images/reels/reel5.MP4"></video>
+     </div>
 
    </div>
  </div>
+<script>
 
+  function toggleQuestions(){
+    var Gallery = document.getElementById('gallery');
+    var QuestionSet = document.getElementById('questions');
+    Gallery.style.display = 'none';
+   QuestionSet.style.display = 'block';
+   
+  }
+ 
+
+  function toggleGallery(){
+
+
+  //   var Gallery = document.getElementById('gallery');
+  //   var QuestionSet = document.getElementById('questions');
+
+  //  Gallery.style.display = 'block';
+  //  QuestionSet.style.display = 'none';
+  
+  }
+  // window.onload = function(){
+  //   // var galleryButton = document.getElementById("galleryBtn");
+  //   // var Gallery = document.getElementById('gallery');
+  //   // var QuestionSet = document.getElementById('questions');
+  //   // galleryButton.onclick = function(){
+  //   //   //QuestionSet.style.display = 'none';
+    
+  //   //   Gallery.style.display = 'block';
+      
+  //   // }
+  // };
+</script>
   </body>
+
 </html>
