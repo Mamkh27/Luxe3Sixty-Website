@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script type="text/javascript" src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/page4.css" />
 
-    <title>Document</title>
+    <title>Booking</title>
   </head>
 
   <body>
@@ -46,7 +45,7 @@
             </li>
             <li><a href="how-it-works.html">HOW IT WORKS</a></li>
             <li><a href="#">OUR TEAM</a></li>
-            <li class="book-now-cta"><a href="#">BOOK THE BOOTH</a></li>
+            <li class="book-now-cta"><a href="booking.html">BOOK THE BOOTH</a></li>
           </ul>
         </nav>
       </div>
@@ -64,7 +63,10 @@
       <div class="booking-form">
         <div class="address">
           <h3>Venue Address</h3>
-          <input id="residence" type="text" />
+          <input id="ship-address"
+          name="ship-address"
+          required
+          autocomplete="off" />
         </div>
         <div class="event-date">
           <h3>Event Date</h3>
@@ -101,6 +103,24 @@
         time_24hr: true,
         dateFormat: "h:i:K",
       });
+
+      
+      const mobileBtn = document.getElementById("mobile-cta");
+      nav = document.querySelector("nav");
+      mobileBtnExit = document.getElementById("mobile-exit");
+
+      mobileBtn.addEventListener("click", () => {
+        nav.classList.add("menu-btn");
+      });
+
+      mobileBtnExit.addEventListener("click", () => {
+        nav.classList.remove("menu-btn");
+      });
+
+    //Google API
+   
+     
     </script>
+ 
   </body>
 </html>

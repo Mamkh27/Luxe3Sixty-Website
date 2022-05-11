@@ -26,7 +26,7 @@
 }
 .booking-form {
   max-width: 100%;
-  background-color: lightblue;
+  background-color: rgb(233, 233, 233);
   display: block;
   padding: 1em 2em;
   font-family: Arial;
@@ -67,7 +67,7 @@ p {
   text-align: center;
   margin-top: -2em;
 }
-#residence {
+#ship-address {
   padding: 1em;
   width: 80%;
   margin-top: -2em;
