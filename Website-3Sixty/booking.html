@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="booking.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/page4.css" />
 
@@ -63,8 +63,8 @@
       <div class="booking-form">
         <div class="address">
           <h3>Venue Address</h3>
-          <input id="ship-address"
-          name="ship-address"
+          <input id="venue-address"
+          name="venue-address"
           required
           autocomplete="off" />
         </div>
@@ -83,7 +83,7 @@
         </div>
     </div>
         <div class="get-quote-btn">
-        <button href="#" class="book-now-cta-2">Get Quote</button>
+        <button href="#" onclick="getQuoteBtnPressed()" class="book-now-cta-2">Get Quote</button>
         </div>
     </div>
     <script>
