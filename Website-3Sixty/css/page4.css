@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=IBM+Plex+Sans:wght@100&family=Water+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
 
 :root {
   --primary-color: #013498;
@@ -143,4 +143,32 @@ h3 {
   background-color: var(--primary-color);
   border: 1px solid;
   font-size: 15px;
+}
+
+.hours,
+.mileage,
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6em;
+  font-family: "Arial";
+}
+.mileage {
+  margin-top: -3em;
+  font-weight: 100;
+}
+.total {
+  font-weight: 200;
+}
+.hl {
+  width: 100%;
+  border-color: lightgray;
+  border-width: 0.5px;
+  border-style: solid;
+  margin-top: -0.2em;
+}
+
+.total-summary {
+  margin-top: 3em;
+  display: none;
 }

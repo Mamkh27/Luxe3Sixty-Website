@@ -1,82 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-  
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
-    <script type="text/javascript" src="booking.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/page4.css" />
+<head>
 
-    <title>Booking</title>
-  </head>
 
-  <body>
-    <div class="navbar">
-      <div class="container">
-        <a class="logo" href="/Website-3Sixty/index.html"
-          ><span style="font-family: IBM Plex Sans; color: black">LUXE </span
-          ><span style="font-family: Water Brush">3Sixty</span>
-        </a>
-        <img
-          style="width: 1em"
-          id="mobile-cta"
-          class="mobile-menu"
-          src="images/menu.svg"
-          alt="Open
-        Navigation"
-        />
-        <nav>
-          <img
-            id="mobile-exit"
-            class="mobile-menu-exit"
-            src="images/exit-button.svg"
-            alt="Close Navigation"
-          />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script type="text/javascript" src="booking.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/page4.css" />
 
-          <ul class="secondary-nav">
-            <li class="current">
-              <a href="index.html">HOME</a>
-            </li>
-            <li><a href="how-it-works.html">HOW IT WORKS</a></li>
-            <li><a href="#">OUR TEAM</a></li>
-            <li class="book-now-cta"><a href="booking.html">BOOK THE BOOTH</a></li>
-          </ul>
-        </nav>
-      </div>
+  <title>Booking</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="/Website-3Sixty/index.html"><span
+          style="font-family: IBM Plex Sans; color: black">LUXE </span><span
+          style="font-family: Water Brush">3Sixty</span>
+      </a>
+      <img style="width: 1em" id="mobile-cta" class="mobile-menu"
+        src="images/menu.svg" alt="Open
+Navigation" />
+      <nav>
+        <img id="mobile-exit" class="mobile-menu-exit"
+          src="images/exit-button.svg" alt="Close Navigation" />
+
+        <ul class="secondary-nav">
+          <li class="current">
+            <a href="index.html">HOME</a>
+          </li>
+          <li><a href="how-it-works.html">HOW IT WORKS</a></li>
+          <li><a href="#">OUR TEAM</a></li>
+          <li class="book-now-cta"><a href="booking.html">BOOK THE BOOTH</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <section class="hero">
-      <div class="container">
-        <img class="hero-img" src="images/hero-banner.jpg" alt="Banner" />
-      </div>
-    </section>
-    <div class="booking-section">
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <img class="hero-img" src="images/hero-banner.jpg" alt="Banner" />
+    </div>
+  </section>
+  <div class="booking-section">
+    <div class="header">
+      <p class="title">3Sixty Reservations</p>
+      <p class="hour-minimum">2 Hr. Min</p>
+    </div>
+    <div class="booking-form">
       <div class="header">
-        <p class="title">3Sixty Reservations</p>
-        <p class="hour-minimum">2 Hr. Min</p>
+        <h2>$160 <span class="hour">/hour</span></h2>
+        <button class="review"><span class="rating">★ 4.43 </span>(5)</button>
       </div>
-      <div class="booking-form">
-        <div class="header">
-<h2>$160 <span class="hour">/hour</span></h2>
-<button class="review"><span class="rating">★ 4.43 </span>(5)</button>
-        </div>
-        <div class="address">
-          <h3>VENUE ADDRESS</h3>
-          <input id="venue-address"
-          name="venue-address"
-          required
+      <div class="address">
+        <h3>VENUE ADDRESS</h3>
+        <input id="venue-address" name="venue-address" required
           autocomplete="off" />
-        </div>
-        <div class="event-date">
-          <h3>EVENT DATE</h3>
-          <input type="Date" id="myID" />
-        </div>
-        <div class="time">
+      </div>
+      <div class="event-date">
+        <h3>EVENT DATE</h3>
+        <input type="Date" id="myID" />
+      </div>
+      <div class="time">
         <div class="start-time">
           <h3>START TIME</h3>
           <input class="start" type="time" id="start-time" />
@@ -86,17 +80,36 @@
           <h3>END TIME</h3>
           <input type="time" id="end-time" />
         </div>
-    </div>
-        <div class="get-quote-btn">
-        <button href="#" onclick="getQuoteBtnPressed()" class="book-now-cta-3">Get Quote</button>
-        
+      </div>
+      <div class="get-quote-btn">
+        <button href="#" onclick="getQuoteBtnPressed()"
+          class="book-now-cta-3">Get Quote</button>
+      </div>
+
+      <div class="total-summary" id="total-summary">
+
+        <div class="hours">
+          <p class="hours-booked" >Hourly Fee</p>
+          <p class="session-cost" id="hourly-fee">$320</p>
         </div>
+
+        <div class="mileage">
+          <p class="mileage-cost">Travel Fee</p>
+          <p class="gas-cost" id="miles-fee">$25</p>
+        </div>
+
+        <h2 class="hl"></h2>
+
+      <div class="total">
+        <p>Total</p>
+        <p class="quote-value" id="quote-value">$345</p>
+      </div>
+
     </div>
-    <div class="quote">
-      <p id="quote-value">$100</p>
     </div>
-   <script>
-           flatpickr("#myID", {
+
+    <script>
+      flatpickr("#myID", {
         dateFormat: "D F d Y",
       });
 
@@ -113,7 +126,7 @@
         dateFormat: "h:i:K",
       });
 
-      
+
       const mobileBtn = document.getElementById("mobile-cta");
       nav = document.querySelector("nav");
       mobileBtnExit = document.getElementById("mobile-exit");
@@ -126,35 +139,34 @@
         nav.classList.remove("menu-btn");
       });
 
-var start = document.getElementById("start-time").value;
-var end = document.getElementById("end-time").value;
+      var start = document.getElementById("start-time").value;
+      var end = document.getElementById("end-time").value;
 
-var minutes; 
-var hours;
-document.getElementById("start-time").onchange = function() {diff(start,end)};
-document.getElementById("end-time").onchange = function() {diff(start,end)};
+      var minutes;
+      var hours;
+      document.getElementById("start-time").onchange = function () { diff(start, end) };
+      document.getElementById("end-time").onchange = function () { diff(start, end) };
 
 
-function diff(start, end) {
-    start = document.getElementById("start-time").value; //to update time value in each input bar
-    end = document.getElementById("end-time").value; //to update time value in each input bar
-    
-    start = start.split(":");
-    end = end.split(":");
-    var startDate = new Date(0, 0, 0, start[0], start[1], 0);
-    var endDate = new Date(0, 0, 0, end[0], end[1], 0);
-    var diff = endDate.getTime() - startDate.getTime();
-    hours = Math.floor(diff / 1000 / 60 / 60);
-    diff -= hours * 1000 * 60 * 60;
-    minutes = Math.floor(diff / 1000 / 60);
+      function diff(start, end) {
+        start = document.getElementById("start-time").value; //to update time value in each input bar
+        end = document.getElementById("end-time").value; //to update time value in each input bar
 
-    return (hours < 9 ? "0" : "") + hours + ":" + (minutes < 9 ? "0" : "") + minutes;
-}
+        start = start.split(":");
+        end = end.split(":");
+        var startDate = new Date(0, 0, 0, start[0], start[1], 0);
+        var endDate = new Date(0, 0, 0, end[0], end[1], 0);
+        var diff = endDate.getTime() - startDate.getTime();
+        hours = Math.floor(diff / 1000 / 60 / 60);
+        diff -= hours * 1000 * 60 * 60;
+        minutes = Math.floor(diff / 1000 / 60);
 
-setInterval(function(){document.getElementById("diff").value = diff(start, end);}, 1000); 
-   </script>
- 
-  </body>
+        return (hours < 9 ? "0" : "") + hours + ":" + (minutes < 9 ? "0" : "") + minutes;
+      }
+
+     // setInterval(function () { document.getElementById("diff").value = diff(start, end); }, 1000); 
+    </script>
+
+</body>
+
 </html>
-
-
