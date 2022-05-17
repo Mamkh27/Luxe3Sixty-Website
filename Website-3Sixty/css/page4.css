@@ -3,22 +3,7 @@
 :root {
   --primary-color: #013498;
 }
-.book-now-cta-2 {
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
 
-  color: white;
-  background-color: var(--primary-color);
-  border-radius: 5em;
-  margin-top: -0.2em;
-  padding: 0.5em 1.5em;
-  margin-right: 0.5em;
-  font-family: "IBM Plex Sans";
-}
 .booking-section {
   display: block;
   margin: 0px;
@@ -26,22 +11,32 @@
 }
 .booking-form {
   max-width: 100%;
-  background-color: rgb(233, 233, 233);
+  background-color: white;
+  border-radius: 50px 50px 50px 50px;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
   display: block;
   padding: 1em 2em;
   font-family: Arial;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rating {
+  font-weight: bold;
+}
+.review {
+  border: none;
+  background: white;
+}
+.hour {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 0.6em;
+}
+.booking-form .header {
+  display: flex;
+  place-content: space-between;
 }
 
-.get-quote-btn {
-  margin-top: 2em;
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
 p {
   font-size: 2em;
   font-weight: bold;
@@ -52,25 +47,82 @@ p {
 .time {
   display: flex;
 }
-
+.vl {
+  border-right: 1px solid darkgray;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 0.5em;
+}
 #start-time,
 #end-time {
-  padding: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   width: 40%;
   text-align: center;
   margin-top: -2em;
+  border-style: hidden;
 }
 
+.end-time {
+  margin-left: 20px;
+}
 #myID {
   padding: 1em;
   width: 30%;
   text-align: center;
   margin-top: -2em;
+  border-style: hidden;
 }
-#ship-address {
+.address {
+  padding: 10px;
+  border-color: darkgray;
+  border-width: 1px;
+  border-radius: 25px 25px 0px 0px;
+  border-style: solid;
+}
+.event-date {
+  padding: 10px;
+  border-color: darkgray;
+  border-width: 1px;
+  border-top-width: 0;
+  border-style: solid;
+}
+.time {
+  padding: 10px;
+  border-color: darkgray;
+  border-width: 1px;
+  border-top-width: 0;
+  border-radius: 0px 0px 25px 25px;
+  border-style: solid;
+}
+
+h3 {
+  font-size: 0.8em;
+  color: rgb(33, 33, 33);
+}
+.book-now-cta-3 {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #015498, #013498);
+  margin-top: 1em;
+  padding: 0.5em 1.5em;
+  font-family: "Helvetica";
+  text-decoration: none;
+  color: white;
+}
+
+#venue-address {
   padding: 1em;
   width: 80%;
   margin-top: -2em;
+  border-style: hidden;
 }
 .header {
   background-color: white;
@@ -83,12 +135,12 @@ p {
 .hour-minimum {
   display: flex;
   justify-content: center;
-
   height: 1em;
   overflow: hidden;
   white-space: nowrap;
   padding: 0.5em;
   color: white;
   background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border: 1px solid;
+  font-size: 15px;
 }
