@@ -1,3 +1,8 @@
+
+
+   const factor = 0.621371
+  var differenceInMiles = 0;
+
 function getQuoteBtnPressed(){
     let address = document.getElementById("venue-address").value;
     let homeaddress = {
@@ -5,8 +10,7 @@ function getQuoteBtnPressed(){
         longitude: -121.535684
     }
     // conversion factor
-const factor = 0.621371
-  let differenceInMiles = 0;
+
 console.log("button pressed");
 console.log(`User address is ${address}`);
 
@@ -21,15 +25,20 @@ $.ajax({
     }
   }).done(function(data) {
       console.log("Now printing...");
-    console.log(data.parse());
-    // console.log(`the latitude is ${data[0].latitude}`);
 
-    // Find the mileage between home and inputed address
-    // differenceInMiles = factor * calcCrow(homeaddress.latitude, homeaddress.longitude, data['latitude'], data['longitude']);
-    // console.log(`The amount of miles between the home address and ${address} is ${differenceInMiles}`);
+// Find the mileage between home and inputed address
+     differenceInMiles = (factor * calcCrow(homeaddress.latitude, homeaddress.longitude, JSON.stringify(data.data[0][`latitude`]), JSON.stringify(data.data[0][`longitude`])) + 5);
+     console.log(`The amount of miles between the home address and ${address} is ${differenceInMiles}`);
+     updateQuote();
   });
-  }
 
+  }
+  
+  //update quote based on hours and travel fee
+  function updateQuote(){
+let cost = (((hours + minutes/60) * 160) + (2 * (differenceInMiles * 0.65)));
+document.getElementById("quote-value").innerHTML = cost;
+}
   function calcCrow(lat1, lon1, lat2, lon2) {
     var R = 6371 // km
     var dLat = toRad(lat2 - lat1)
