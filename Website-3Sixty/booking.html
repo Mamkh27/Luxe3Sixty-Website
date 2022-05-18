@@ -47,12 +47,10 @@ Navigation" />
       </nav>
     </div>
   </div>
-  
-  <div class="blackout" id="blackout" style="position:fixed;
-  z-index: 0; 
-  top:0; left:0; bottom:0; right:0;
-  background:rgba(0,0,0,.5);">
-  </div>
+
+  <div class="container-all">
+  <div class="blackout" id="blackout"></div>
+  <div class="gray-out-section">
 
   <section class="hero">
     <div class="container">
@@ -126,8 +124,9 @@ Navigation" />
 
     </div>
     </div>
-
-    <div id="terms">
+    </div>
+    </div>
+    <div class="top-div" id="terms">
       <div class="header"><h1>LUXE 3SIXTY VIDEO BOOTH RENTAL AGREEMENT</h1></div>
       <div class="parties">
         Video Booth Provider: Luxe 3Sixty ("Provider") <br>
@@ -228,7 +227,6 @@ www.luxe3sixty.com/booking.html. <br><br>
       damage was not caused by the fault or negligence of the Provider or its
       employees, agents, or subcontractors. <br><br>
       </div>
-
       <div class="governing-law">
         <h2>GOVERNING LAW</h2>
         This Agreement shall be construed and governed in accordance with
@@ -239,7 +237,7 @@ www.luxe3sixty.com/booking.html. <br><br>
         <h2>ENTIRE AGREEMENT</h2>
        This Agreement constitutes the entire agreement between the Parties. No modification or amendment of this Agreement shall &nbsp;be effective unless in writing and signed by both Parties.
       </div>
-    </div>
+  
     <div id="checkbox-div">
       <p class="small-text">Scroll through terms and tick checkbox above to continue</p>
       <p>
@@ -249,6 +247,9 @@ www.luxe3sixty.com/booking.html. <br><br>
       <div class="button" id="submit">SUBMIT</div>
       <div id="pleaseTick"></div>
     </div>
+  </div>
+  <!-- container div -->
+</div>
 
 
 
@@ -389,7 +390,7 @@ www.luxe3sixty.com/booking.html. <br><br>
 
     $(document).ready(function () {
   $("#terms").scroll(function () {
-    console.log($(this).scrollTop());
+    //console.log($(this).scrollTop());
     var scrollFromTop = $(this).scrollTop();
     var scrollHeight = $(this)[0].scrollHeight - $(this).height();
     var checkboxDivHeight =
