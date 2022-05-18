@@ -101,7 +101,7 @@ h3 {
   font-size: 0.8em;
   color: rgb(33, 33, 33);
 }
-.book-now-cta-3 {
+.get-quote {
   display: block;
   width: 100%;
   border: none;
@@ -117,7 +117,27 @@ h3 {
   text-decoration: none;
   color: white;
 }
+.reserve {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 20px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #890198, #5c0198);
+  margin-top: 1em;
 
+  font-family: "Helvetica";
+  text-decoration: none;
+  color: white;
+}
+
+#reserveID,
+#time-error {
+  display: none;
+}
 #venue-address {
   padding: 1em;
   width: 80%;
@@ -170,5 +190,11 @@ h3 {
 
 .total-summary {
   margin-top: 3em;
+  display: none;
+}
+.error {
+  font-family: Arial;
+  font-weight: 100;
+  color: red;
   display: none;
 }

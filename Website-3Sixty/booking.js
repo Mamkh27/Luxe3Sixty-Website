@@ -21,25 +21,53 @@ function getQuoteBtnPressed() {
       query: address,
       limit: 1,
     },
-  }).done(function (data) {
-    console.log("Now printing...");
+  })
+    .done(function (data) {
+      console.log("Now printing...");
 
-    // Find the mileage between home and inputed address
-    differenceInMiles =
-      factor *
-        calcCrow(
-          homeaddress.latitude,
-          homeaddress.longitude,
-          JSON.stringify(data.data[0][`latitude`]),
-          JSON.stringify(data.data[0][`longitude`])
-        ) +
-      5;
-    console.log(
-      `The amount of miles between the home address and ${address} is ${differenceInMiles}`
-    );
-    updateQuote();
-    document.getElementById("total-summary").style.display = "block";
-  });
+      // Find the mileage between home and inputed address
+      differenceInMiles =
+        factor *
+          calcCrow(
+            homeaddress.latitude,
+            homeaddress.longitude,
+            JSON.stringify(data.data[0][`latitude`]),
+            JSON.stringify(data.data[0][`longitude`])
+          ) +
+        5;
+      console.log(
+        `The amount of miles between the home address and ${address} is ${differenceInMiles}`
+      );
+      let start = document.getElementById("start-time").value; //to update time value in each input bar
+      let end = document.getElementById("end-time").value;
+      let date = document.getElementById("date-error-msg").value;
+
+      if (!start) {
+        document.getElementById("start-time-error-msg").style.display = "block";
+      } else {
+        document.getElementById("start-time-error-msg").style.display = "none";
+      }
+      if (!end) {
+        document.getElementById("end-time-error-msg").style.display = "block";
+      } else {
+        document.getElementById("end-time-error-msg").style.display = "none";
+      }
+      if (date) {
+        document.getElementById("date-error-msg").style.display = "block";
+      } else {
+        document.getElementById("date-error-msg").style.display = "none";
+      }
+
+      if (start && end) {
+        updateQuote();
+        document.getElementById("total-summary").style.display = "block";
+        document.getElementById("getquoteID").style.display = "none";
+        document.getElementById("reserveID").style.display = "block";
+      }
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      document.getElementById("error-msg").style.display = "block";
+    });
 }
 
 //update quote based on hours and travel fee
