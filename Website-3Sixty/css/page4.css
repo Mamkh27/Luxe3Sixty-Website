@@ -106,11 +106,11 @@ h3 {
   width: 100%;
   border: none;
   padding: 20px 28px;
-  font-size: 20px;
+  font-size: 17px;
   cursor: pointer;
   text-align: center;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #015498, #013498);
+  background-image: linear-gradient(to right, #013498, #005ca8);
   margin-top: 1em;
 
   font-family: "Helvetica";
@@ -122,11 +122,11 @@ h3 {
   width: 100%;
   border: none;
   padding: 20px 28px;
-  font-size: 20px;
+  font-size: 17px;
   cursor: pointer;
   text-align: center;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #890198, #5c0198);
+  background-image: linear-gradient(to right, #9801a9, #5c0198);
   margin-top: 1em;
 
   font-family: "Helvetica";
@@ -197,4 +197,62 @@ h3 {
   font-weight: 100;
   color: red;
   display: none;
+}
+
+/*reservation clicked*/
+.blackout {
+  display: none;
+  z-index: 0;
+}
+
+#terms {
+  display: none;
+  height: 400px;
+  width: 600;
+  overflow-y: scroll;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 15;
+}
+
+.small-text {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.highlight {
+  background-color: #87cefa;
+  border: 1px solid #87cefa;
+}
+
+#checkbox-div {
+  display: none;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  z-index: 15;
+}
+
+.button {
+  background-color: #a9a9a9;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+#terms p {
+  font-size: 0.5em;
+}
+p {
+  margin: 0px;
 }

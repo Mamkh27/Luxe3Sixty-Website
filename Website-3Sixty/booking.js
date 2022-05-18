@@ -1,3 +1,4 @@
+src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
 const factor = 0.621371;
 var differenceInMiles = 0;
 
@@ -64,7 +65,7 @@ function getQuoteBtnPressed() {
 
         updateQuote();
         document.getElementById("total-summary").style.display = "block";
-        document.getElementById("getquoteID").style.display = "none";
+
         document.getElementById("reserveID").style.display = "block";
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
@@ -102,4 +103,11 @@ function calcCrow(lat1, lon1, lat2, lon2) {
 // Converts numeric degrees to radians
 function toRad(Value) {
   return (Value * Math.PI) / 180;
+}
+
+//Reservation Javascript
+function reserveBtnPressed() {
+  document.getElementById("blackout").style.display = "block";
+  document.getElementById("terms").style.display = "block";
+  document.getElementById("checkbox-div").style.display = "block";
 }
