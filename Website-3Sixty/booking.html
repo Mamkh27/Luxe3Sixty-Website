@@ -161,7 +161,8 @@ Navigation" />
         document.getElementById("start-time-error-msg").style.display = "none"; };
       document.getElementById("end-time").onchange = function () { diff(start, end);
         document.getElementById("end-time-error-msg").style.display = "none"; };
-
+        document.getElementById("myID").onchange = function () { 
+        document.getElementById("date-error-msg").style.display = "none"; };
 
       function diff(start, end) {
         start = document.getElementById("start-time").value; //to update time value in each input bar
@@ -182,20 +183,19 @@ Navigation" />
         let outsideHours = "Your entry is outside of booking hours. Please fix the time.";
         let minHours = "End time should be atleast two hours after start time.";
         let maxHours = "Luxe 3Sixty does not book sessions past eight hours.";
+
+        //FINDING SESSION COVERAGE 
         //if outside of booking hours
-   
-        if (((startNumHR != 11) && start[2] == "AM") || ( (endNumHR != 12) && (end[2] == "AM"))){
+        if (((startNumHR != 11) && (start[2] == "AM")) || ( (endNumHR != 12) && (end[2] == "AM"))){
           document.getElementById("time-error").style.display = "block"; 
           document.getElementById("time-error").innerHTML= outsideHours;
         } else {
           document.getElementById("time-error").style.display = "none"; 
-        }
-        
 
         // (endNumHR != 11 || endNumHR != 12)
         //if AM-AM or PM-PM
         if(end[2] == start[2]){
-
+          
           //if 1AM-11AM or 1PM-11PM start time
          if(startNumHR != 12){
 
@@ -204,6 +204,10 @@ Navigation" />
             if((endNumHR <= startNumHR) || (endNum - startNum < 2)){
                   document.getElementById("time-error").style.display = "block"; 
                   document.getElementById("time-error").innerHTML= minHours;
+              }
+              else if(endNum - startNum > 8){
+                document.getElementById("time-error").style.display = "block"; 
+                  document.getElementById("time-error").innerHTML= maxHours;
               }else{
                   document.getElementById("time-error").style.display = "none"; 
                }
@@ -244,7 +248,7 @@ Navigation" />
                   document.getElementById("time-error").style.display = "none"; 
                }
       }
-
+    }
     </script>
 
 </body>
