@@ -77,6 +77,7 @@ function getQuoteBtnPressed() {
         updateQuote();
         document.getElementById("total-summary").style.display = "block";
         document.getElementById("reserveID").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
         document.getElementById("address-error-msg").style.display = "block";
