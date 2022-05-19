@@ -3,6 +3,17 @@ const factor = 0.621371;
 var differenceInMiles = 0;
 
 function getQuoteBtnPressed() {
+  document.getElementById("sign").style.color = "white";
+  max = 55;
+  let anim = setInterval(() => {
+    if (value == max) {
+      clearInterval(anim);
+    } else {
+      value += 1;
+      progressBar.value = value;
+      progressBarValue.innerText = value + "%";
+    }
+  }, 80);
   let address = document.getElementById("venue-address").value;
   let homeaddress = {
     latitude: 38.684292,
@@ -65,7 +76,6 @@ function getQuoteBtnPressed() {
 
         updateQuote();
         document.getElementById("total-summary").style.display = "block";
-
         document.getElementById("reserveID").style.display = "block";
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
@@ -103,11 +113,4 @@ function calcCrow(lat1, lon1, lat2, lon2) {
 // Converts numeric degrees to radians
 function toRad(Value) {
   return (Value * Math.PI) / 180;
-}
-
-//Reservation Javascript
-function reserveBtnPressed() {
-  document.getElementById("blackout").style.display = "block";
-  document.getElementById("terms").style.display = "block";
-  document.getElementById("checkbox-div").style.display = "block";
 }

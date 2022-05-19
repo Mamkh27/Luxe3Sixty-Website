@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400&display=swap");
-
+body {
+  background-color: white;
+}
 :root {
   --primary-color: #013498;
 }
@@ -15,6 +17,8 @@
   border-radius: 50px 50px 50px 50px;
   margin-left: 1.5em;
   margin-right: 1.5em;
+  margin-bottom: 2em;
+  margin-top: 1em;
   display: block;
   padding: 1em 2em;
   font-family: Arial;
@@ -145,23 +149,19 @@ h3 {
   border-style: hidden;
 }
 .header {
-  background-color: white;
   padding-top: 1em;
 }
 .title {
   display: flex;
   justify-content: center;
+  font-size: 1em;
 }
 .hour-minimum {
-  display: flex;
   justify-content: center;
   height: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0.5em;
-  color: white;
-  background-color: var(--primary-color);
-  border: 1px solid;
+  margin-bottom: -1em;
+  color: rgb(46, 46, 46);
+
   font-size: 15px;
 }
 
@@ -218,8 +218,8 @@ h3 {
 }
 #terms {
   display: none;
-  height: 700px;
-  width: 600;
+  height: 500px;
+  width: 400;
   overflow-y: scroll;
   border: 1px solid black;
   margin-top: 10px;
@@ -272,4 +272,35 @@ p {
 
 .agreement-box {
   position: relative;
+}
+
+.progress-status {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 80px;
+}
+
+.booked,
+.sign,
+.details,
+.deposit {
+  color: darkgray;
+  font-size: 0.8em;
+  margin-top: -8em;
+}
+
+.inner-text {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#zelle {
+  display: none;
+  justify-content: center;
+  font-family: "Arial";
+}
+
+#zelle p {
+  font-size: 1.5em;
 }

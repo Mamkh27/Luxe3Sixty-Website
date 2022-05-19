@@ -19,7 +19,7 @@
   <title>Booking</title>
 </head>
 
-<body>
+<body onload="progress()">
 
   
   <div class="navbar">
@@ -57,14 +57,28 @@ Navigation" />
       <img class="hero-img" src="images/hero-banner.jpg" alt="Banner" />
     </div>
   </section>
-  <div class="booking-section">
-    <div class="header">
-      <p class="title">3Sixty Reservations</p>
-      <p class="hour-minimum">2 Hr. Min</p>
-    </div>
+  <div class="header">
+    <div class="progress-status">
+          <h4 id="details" class="details">Details</h4>
+          <h4 id="sign" class="sign">Sign</h4>
+          <h4 id="deposit" class="deposit">Deposit</h4>
+          <h4 id="booked" class="booked">Booked</h4>
+          </div>
+          <div class="neon-bar">
+            <progress class='bar' value='0' max='100'></progress>
+            <span class='bar__value'>0%</span>
+          </div>
+       
+        </div>
+  <div id="booking" class="booking-section">
+
     <div class="booking-form">
       <div class="header">
+        <div>
+          <p class="hour-minimum">2 Hr. Min</p>
         <h2>$160 <span class="hour">/hour</span></h2>
+        
+        </div>
         <button class="review"><span class="rating">★ 4.43 </span>(5)</button>
       </div>
       <div class="address">
@@ -128,6 +142,7 @@ Navigation" />
     </div>
     </div>
     <div class="top-div" id="terms">
+      <div class="inner-text">
       <div class="header"><h1>LUXE 3SIXTY VIDEO BOOTH RENTAL AGREEMENT</h1></div>
       <div class="parties">
         Video Booth Provider: Luxe 3Sixty ("Provider") <br>
@@ -238,7 +253,7 @@ www.luxe3sixty.com/booking.html. <br><br>
         <h2>ENTIRE AGREEMENT</h2>
        This Agreement constitutes the entire agreement between the Parties. No modification or amendment of this Agreement shall &nbsp;be effective unless in writing and signed by both Parties.
       </div>
-  
+    </div>
     <div id="checkbox-div">
       <p class="small-text">Scroll through terms and tick checkbox above to continue</p>
       <p>
@@ -254,7 +269,62 @@ www.luxe3sixty.com/booking.html. <br><br>
 
 
 
+<div id="zelle">
+  <!-- Reservation Summary -->
+<div style="display: block; margin-left: 20px; margin-right: 20px" class="reservation-summary" id="reservation-summary">
 
+  <div class="hours">
+    <p class="hours-booked" >Client Name</p>
+    <p class="session-cost" id="hourly-fee">Manprit Heer</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Client E-mail</p>
+    <p class="gas-cost" id="miles-fee">mamkh27@gmail.com</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Event Type</p>
+    <p class="gas-cost" id="miles-fee">Birthday Party</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Address</p>
+    <p class="gas-cost" id="miles-fee">11 Miga Madison Ct. Sacramento, CA 95835</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Hours Booked</p>
+    <p class="gas-cost" id="miles-fee">2</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Deposit Paid</p>
+    <p class="gas-cost" id="miles-fee">$83.60</p>
+  </div>
+
+  <div class="mileage">
+    <p class="mileage-cost">Remaining Total</p>
+    <p class="gas-cost" id="miles-fee">$242.40</p>
+  </div>
+
+  <h2 class="hl"></h2>
+
+  <div style="display: block; margin-left: 20px; margin-right: 20px">
+  <h2>In order to finalizing your 360 booth booking, please send a deposit in the
+  amount of: </h2>
+  <h1 style="display: flex; justify-content: center;">$81.50</h1><br><br>
+  <img src="images/zelle-badge.jpg" alt="Zelle Payment">
+  <h2>Next Steps: We will send you an email with an invoice and summary of the
+    reservation. This e-mail will also contain your options for the overlay as
+  well as what is needed from you in terms of title and date placement. You will
+  be sent a courtesy reminder 24 hours, and 5 hours before the remaining deposit
+  deadline. </h2>
+  <h2>Thank you for booking with Luxe 3Sixty! We look forward to your event.</h2>
+</div>
+</div>
+
+</div>
     <script>
 
 
@@ -410,6 +480,23 @@ www.luxe3sixty.com/booking.html. <br><br>
   $("#submit").click(function () {
     var tickChecked = $("#payment").is(":checked");
     if (tickChecked) {
+    document.getElementById("terms").style.display = "none";
+    document.getElementById("blackout").style.display = "none";
+    document.getElementById("booking").style.display = "none";
+    document.getElementById("deposit").style.color = "white";
+    document.getElementById("zelle").style.display = "flex";
+    
+      max =83;
+        let anim = setInterval(() => {
+  if (value == max) {
+    clearInterval(anim);
+  } else {
+    value += 1;
+    progressBar.value = value;
+    progressBarValue.innerText = value + "%";
+  }
+}, 80);
+
       console.log("agree");
       $("#checkbox-div").replaceWith(
         "<div style='color:#32CD32;'><h2>Agreed! (Do next sign-up thing)</h2></div>"
@@ -422,9 +509,43 @@ www.luxe3sixty.com/booking.html. <br><br>
   });
 });
 
+function progress(){
+  document.getElementById("details").style.color = "white";
+max = 20;
+let anim = setInterval(() => {
+  if (value == max) {
+    clearInterval(anim);
+  } else {
+    value += 1;
+    progressBar.value = value;
+    progressBarValue.innerText = value + "%";
+  }
+}, 80);
+}
+
+const progressBar = document.querySelector(".bar"),
+progressBarValue = document.querySelector(".bar__value");
+let value = 0;
+let max = 50;
 
 
 
+//Reservation Javascript
+function reserveBtnPressed() {
+  document.getElementById("blackout").style.display = "block";
+  document.getElementById("terms").style.display = "block";
+  document.getElementById("checkbox-div").style.display = "block";
+
+  let anim = setInterval(() => {
+  if (value == max) {
+    clearInterval(anim);
+  } else {
+    value += 1;
+    progressBar.value = value;
+    progressBarValue.innerText = value + "%";
+  }
+}, 80);
+}
     
     </script>
 

@@ -11,9 +11,9 @@ img {
 }
 
 body {
-  background: #F2F2F2;
+  background: #f2f2f2;
   margin: 0;
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
 }
 
 hero.container {
@@ -95,20 +95,20 @@ section {
   text-transform: uppercase;
   font-weight: bold;
   color: gray;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
 }
 
 .top-row h1 {
   font-size: 2.5em;
   line-height: 1.3em;
-  margin-top: .2em;
+  margin-top: 0.2em;
 }
 
 .top-row .primary-cta {
   background: var(--primary-color);
   color: white;
   text-decoration: none;
-  padding: .6em 1.3em;
+  padding: 0.6em 1.3em;
   font-size: 1.4em;
   border-radius: 5em;
   font-weight: bold;
@@ -121,7 +121,7 @@ section {
 }
 
 .top-row .watch-video-cta img {
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 section.features-section {
@@ -165,7 +165,7 @@ nav {
   width: 66%;
   right: 0;
   top: 0;
-  background: #0E1828;
+  background: #0e1828;
   height: 100vh;
   padding: 1em;
 }
@@ -178,7 +178,7 @@ nav li a {
   color: white;
   text-decoration: none;
   display: block;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 1.3em;
   text-align: right;
 }
@@ -194,12 +194,13 @@ nav li a:hover {
   filter: invert(100%);
   display: block;
   float: right;
-  margin: .5em;
+  margin: 0.5em;
   cursor: pointer;
 }
 
 @media only screen and (min-width: 629px) {
-  .mobile-menu, .mobile-menu-exit {
+  .mobile-menu,
+  .mobile-menu-exit {
     display: none;
   }
   .navbar .container {
@@ -229,7 +230,7 @@ nav li a:hover {
   .navbar nav a {
     color: black;
     font-size: 1em;
-    padding: .1em 1em;
+    padding: 0.1em 1em;
   }
   .navbar nav ul.secondary-nav {
     margin: 0;
@@ -242,7 +243,7 @@ nav li a:hover {
     border: 3px solid var(--primary-color);
     font-weight: bold;
     border-radius: 5em;
-    margin-top: -.2em;
+    margin-top: -0.2em;
   }
   .navbar nav li.book-now-cta a:hover {
     background: var(--primary-color);
@@ -260,6 +261,44 @@ nav li a:hover {
 
 .footer {
   padding: 3em;
-  background-color: #0E1828;
+  background-color: #0e1828;
+}
+
+.bar {
+  -webkit-appearance: none;
+  height: 1.4em;
+  width: 300px;
+  margin-top: -8em;
+}
+
+.bar::-webkit-progress-bar {
+  padding: 0.3em;
+  border-radius: calc(1.4em / 2);
+  background: #0d0d0d;
+}
+
+.bar::-webkit-progress-value {
+  background: #03fcef;
+  -webkit-box-shadow: 0 0 0.6em #0dfcf0, 0 0 0.8em #17fcf0;
+          box-shadow: 0 0 0.6em #0dfcf0, 0 0 0.8em #17fcf0;
+  border-radius: calc(1.4em/ 2);
+}
+
+.bar__value {
+  color: white;
+  font-size: 1em;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+  margin-top: -8em;
+  margin-left: 0.5em;
+}
+
+.neon-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */
