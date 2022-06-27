@@ -115,3 +115,42 @@ function calcCrow(lat1, lon1, lat2, lon2) {
 function toRad(Value) {
   return (Value * Math.PI) / 180;
 }
+
+//server-client code
+("strict mode");
+
+// Do a CORS request
+function createAJAXRequest(method, url) {
+  let xhr = new XMLHttpRequest();
+  xhr.open(method, url, true);
+  return xhr;
+}
+
+// Make the actual CORS request.
+function makeAJAXRequest() {
+  var nameValue = document.getElementById("word").value;
+  let url = `query?word=${nameValue}`;
+  let xhr = createAJAXRequest("GET", url);
+
+  if (!xhr) {
+    alert("Something happened, ERROR");
+    return;
+  }
+
+  xhr.onload = function () {
+    let responseStr = xhr.responseText; // get the JSON string
+    let object = JSON.parse(responseStr); // turn it into an object
+    document.getElementById("outputGoesHere").textContent =
+      object["palindrome"];
+  };
+
+  xhr.onerror = function () {
+    alert("Woops, there was an error making the request.");
+  };
+
+  xhr.send();
+}
+// Actually send request to server
+
+// run this code to make request when this script file gets executed
+//makeAJAXRequest();
