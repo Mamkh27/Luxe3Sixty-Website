@@ -1,6 +1,6 @@
 // const { type } = require("express/lib/response");
 
-const bookBtn = document.getElementById("submit");
+const bookBtn = document.getElementById("reserveID");
 bookBtn.addEventListener("click", apiRequest);
 
 async function apiRequest() {
@@ -33,18 +33,73 @@ async function apiRequest() {
     const data = await response.json();
     console.log(data);
     //const client = JSON.parse(data);
-    fillSummary(data);
+    fillInfo(data);
   } catch (error) {
     console.log(error);
   }
 }
 
-function fillSummary(client) {
-  document.getElementById("client-name").innerHTML = client.name;
-  document.getElementById("client-email").innerHTML = client.email;
-  document.getElementById("event-type").innerHTML = client.type;
-  document.getElementById("event-address").innerHTML = client.address;
+function fillInfo(client) {
+  document.getElementById("client-name").innerHTML = client.name.toUpperCase();
+  document.getElementById("client-email").innerHTML =
+    client.email.toUpperCase();
+  document.getElementById("event-type").innerHTML = client.type.toUpperCase();
+  document.getElementById("event-address").innerHTML =
+    client.address.toUpperCase();
   document.getElementById("hours-booked").innerHTML = client.hours;
-  document.getElementById("deposit-paid").innerHTML = client.deposit;
-  document.getElementById("remaining-total").innerHTML = client.remaining;
+  document.getElementById("deposit-paid").innerHTML =
+    "$" + client.deposit.toFixed(2);
+  document.getElementById("remaining-total").innerHTML =
+    "$" + client.remaining.toFixed(2);
+  document.getElementById("deposit-h1").innerHTML =
+    "$" + client.deposit.toFixed(2);
+
+  document.querySelector(".name-contract span").textContent =
+    client.name.toUpperCase();
+  document.querySelector(".date-contract span").textContent =
+    client.date.toUpperCase();
+  document.querySelector(".address-contract span").textContent =
+    client.address.toUpperCase();
+  document.querySelector(".type-contract span").textContent =
+    client.type.toUpperCase();
+  document.querySelector(".start-contract").textContent = client.start;
+  document.querySelector(".end-contract").textContent = client.end;
+  document.querySelector(".remaining-contract span").textContent =
+    client.remaining.toFixed(2);
+  document.querySelector(".deposit-contract span").textContent =
+    client.deposit.toFixed(2);
+  const total = (client.remaining + client.deposit).toFixed(2);
+  document.querySelector(".total-contract span").textContent = total;
 }
+// document.getElementById(
+//   "contract-name"
+// ).textContent.innerHTML = `<span>${client.name}</span>`;
+// document.getElementById(
+//   "contract-start"
+// ).textContent.innerHTML = `<span>${client.start}</span>`;
+// document.getElementById(
+//   "contract-end"
+// ).textContent.innerHTML = `<span>${client.end}</span>`;
+
+// document.getElementById("contract-total").textContent.innerHTML = `<span>${(
+//   client.remaining + client.deposit
+// ).toFixed(2)}</span>`;
+
+// document.getElementById(
+//   "contract-date"
+// ).textContent.innerHTML = `<span>${client.date}</span>`;
+// document.getElementById(
+//   "contract-type"
+// ).textContent.innerHTML = `<span>${client.type}</span>`;
+
+// document.getElementById(
+//   "contract-address"
+// ).textContent.innerHTML = `<span>${client.address}</span>`;
+
+// document.getElementById(
+//   "contract-remaining"
+// ).textContent.innerHTML = `<span>${client.remaining}</span>`;
+
+// document.getElementById(
+//   "contract-deposit"
+// ).textContent.innerHTML = `<span>${client.deposit}</span>`;

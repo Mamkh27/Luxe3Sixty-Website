@@ -1,9 +1,23 @@
 const express = require("express");
 const app = express();
+const MongoClient = require("mongodb").MongoClient;
 const cors = require("cors");
 const port = 3000; // you need to put your port number here
+require("dotenv").config();
 
 app.use(cors());
+
+// // //Mongo DB
+// let db,
+//   dbConnectionStr = process.env.DB_STRING,
+//   dbName = "luxe-db";
+
+// MongoClient.connect(dbConnecionStr, { useUnifiedTopology: true }).then(
+//   (client) => {
+//     console.log(`Connected to ${dbName} Database`);
+//     db = client.db(dbName);
+//   }
+// );
 
 const user1 = {
   name: "John Doe",
@@ -13,6 +27,9 @@ const user1 = {
   hours: 5,
   deposit: 250.5,
   remaining: 450.5,
+  date: "June 25, 2022",
+  start: "6:00PM",
+  end: "8:00PM",
 };
 
 app.get("/", (req, res) => {
@@ -23,7 +40,11 @@ app.get("/bookedinfo", (req, res) => {
 });
 
 app.post("/newuser", (req, res) => {
-  res.json(user1);
+  db.collection("Users")
+    .insertOne({ name: req.body.clientName })
+    .then((result) => {
+      console.log("Added to database");
+    });
 });
 
 app.get("/booking.html", (req, res) => {
