@@ -1,26 +1,33 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = 3000; // you need to put your port number here
+
+app.use(cors());
 
 const user1 = {
   name: "John Doe",
   email: "luxe3sixty@gmail.com",
-  eventType: "reception",
-  eventAddress: "1000 Del Paso Rd",
-  hoursBooked: 5,
-  depositPaid: 250.5,
-  remainingTotal: 450.5,
+  type: "reception",
+  address: "1000 Del Paso Rd",
+  hours: 5,
+  deposit: 250.5,
+  remaining: 450.5,
 };
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-
-app.get("/api", (req, res) => {
+app.get("/bookedinfo", (req, res) => {
   res.json(user1);
 });
+
+app.post("/newuser", (req, res) => {
+  res.json(user1);
+});
+
 app.get("/booking.html", (req, res) => {
-  res.sendFile(__dirname + "/booking.html");
+  res.sendFile(__dirname + "/public/booking.html");
 });
 function fileNotFound(req, res) {
   let url = req.url;
@@ -30,33 +37,8 @@ function fileNotFound(req, res) {
 }
 
 app.use(express.static("public")); // can I find a static file?
-// app.get("/query", queryHandler); // if not, is it a valid query?
-// app.post('/addUserInfo', (request, response) => {
-//   db.collection('Bookings').insertOne({ home: 'address', hours: 2 }).then(result => { console.log("We are booked.") response.redirect('/')})
-// }
 app.use(fileNotFound); // otherwise not found
 
-app.listen(process.env.port || port, function () {
+app.listen(process.env.PORT || port, function () {
   console.log("Listening...");
 });
-
-/*
-function queryHandler(req, res, next) {
-  let url = req.url;
-  let qObj = req.query;
-  console.log(qObj);
-  if (qObj.word != undefined) {
-    //code for palindrome
-    var init = qObj.word;
-    var str = qObj.word;
-    str = str.split(""); //convert 'jQuery' to array
-    str = str.reverse(); //reverse 'jQuery' order
-    str = str.join(""); //then join the reverse order values together
-    qObj.word = init + str;
-
-    res.json({ palindrome: qObj.word });
-  } else {
-    next();
-  }
-}
-*/
