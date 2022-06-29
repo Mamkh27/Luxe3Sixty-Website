@@ -90,7 +90,7 @@ function updateQuote() {
   let totalFee = totalHoursbooked * 160;
   let totalMileageCost = 2 * (differenceInMiles * 0.65);
   let cost = totalFee + totalMileageCost;
-  document.getElementById("quote-value").innerHTML = `$${cost.toFixed(2)}`;
+  document.getElementById("quote-value-id").innerHTML = `$${cost.toFixed(2)}`;
   document.getElementById("hourly-fee").innerHTML = `$${totalFee.toFixed(2)}`;
   document.getElementById("miles-fee").innerHTML = `$${totalMileageCost.toFixed(
     2

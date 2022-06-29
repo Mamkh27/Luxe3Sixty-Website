@@ -134,7 +134,7 @@ Navigation" />
        
       <div class="total">
         <p>Total</p>
-        <p class="quote-value" id="quote-value">$345</p>
+        <p class="quote-value" id="quote-value-id">$345</p>
       </div>
 <!-- total summary -->
     </div>
@@ -142,6 +142,7 @@ Navigation" />
     </div>
     </div>
     </div>
+    <form action="/contract-submitted" method="POST" enctype="application/x-www-form-urlencoded">
     <div class="top-div" id="terms">
       <div class="inner-text">
       <div class="header"><h1>LUXE 3SIXTY VIDEO BOOTH RENTAL AGREEMENT</h1></div>
@@ -259,13 +260,27 @@ www.luxe3sixty.com/booking.html. <br><br>
     <div id="checkbox-div">
       <p class="small-text">Scroll through terms and tick checkbox above to continue</p>
       <p>
-        <span id="checkSpan"><input id="payment" type="checkbox" disabled name="terms"></span>
+        <span id="checkSpan"><input id="payment" name="payment" type="checkbox" disabled name="terms"></span>
         <span class="redSmall">I confirm I have read and agree to the terms</span>
       </p>
-      <div class="button" id="submit">SUBMIT</div>
+
+      <label for="email">Enter your name:</label>
+      <input type="text" id="name-contract" name="name">
+
+      <label for="email">Event Type:</label>
+      <input type="text" id="type-contract" name="type">
+
+      <label for="email">Your e-mail:</label>
+      <input type="email" id="email-1-contract" name="email">
+
+      <label for="email">Re-enter e-mail:</label>
+      <input type="email" id="email-2-contract" name="email-valid">
+
+      <div  class="button" id="submit">SUBMIT</div>
       <div id="pleaseTick"></div>
     </div>
   </div>
+</form>
   <!-- container div -->
 </div>
 
@@ -503,6 +518,7 @@ www.luxe3sixty.com/booking.html. <br><br>
       $("#checkbox-div").replaceWith(
         "<div style='color:#32CD32;'><h2>Agreed! (Do next sign-up thing)</h2></div>"
       );
+
     } else {
       $("#pleaseTick").replaceWith(
         "<div class='small-text'>Please tick the checkbox before clicking 'Submit'</div>"

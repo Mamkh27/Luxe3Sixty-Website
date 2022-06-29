@@ -1,19 +1,48 @@
 // const { type } = require("express/lib/response");
 
 const bookBtn = document.getElementById("reserveID");
+const contractSubmitBtn = document.getElementById("submit");
+
 bookBtn.addEventListener("click", apiRequest);
+contractSubmitBtn.addEventListener("click", sendConfirmationEmail);
+
+async function sendConfirmationEmail() {
+  console.log("Reached here!");
+  try {
+    const response = await fetch(
+      "https://luxe3sixty.herokuapp.com/contract-confirmed",
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          status: "confirmed",
+        }),
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    //const client = JSON.parse(data);
+    fillInfo(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function apiRequest() {
-  //   const name = document.getElementById("").value;
-  //   const type = document.getElementById("").value;
+  const name = document.getElementById("name-contract").value;
+  const type = document.getElementById("type-contract").value;
   const date = document.getElementById("myID").value;
   const address = document.getElementById("venue-address").value;
-  //   const email = document.getElementById("").value;
-  // const hours = document.getElementById("").value;
+  const email = document.getElementById("email-2-contract").value;
+
   const start = document.getElementById("start-time").value;
   const end = document.getElementById("end-time").value;
-  const quote = document.getElementById("quote-value").value;
-  const deposit = quote * 0.25;
+  let quote = document.getElementById("quote-value-id").textContent;
+  quote = quote.substring(1);
+  const deposit = (parseFloat(quote) * 0.25).toFixed(2);
   //   const remaining = document.getElementById("").value;
   try {
     const response = await fetch("https://luxe3sixty.herokuapp.com/newuser", {
@@ -23,14 +52,16 @@ async function apiRequest() {
       },
       method: "POST",
       body: JSON.stringify({
-        clientName: "John Doe",
-        eventType: "Engagement Party",
+        clientName: name,
+        eventType: type,
         eventDate: date,
         eventAddress: address,
-        userEmail: "email@email.com",
+        userEmail: email,
         hoursBooked: 3,
         quoteValue: quote,
         depositValue: deposit,
+        startTime: start,
+        endTime: end,
         // remainingTotal: remaining,
       }),
     });

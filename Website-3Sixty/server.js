@@ -9,7 +9,13 @@ require("dotenv").config();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use(express.json());
+app.use(express.urlencoded());
 //database demo
 // let db,
 //   dbConnectionStr = process.env.DB_STRING,
@@ -37,6 +43,60 @@ const user1 = {
   end: "8:00PM",
 };
 
+//actual contract being recieved
+app.post("/contract-submitted", (req, res) => {
+  const bookingObj = req.body;
+  const transporter = nodemailer.createTransport({
+    port: 465, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    auth: {
+      user: "luxe3sixty@gmail.com",
+      pass: "efvbhhlwheoofkms",
+    },
+    secure: true,
+  });
+
+  const msg = {
+    from: "Luxe3Sixty Portal < luxe3sixty@gmail.com>",
+    to: "luxe3sixty@gmail.com",
+    subject: `Here is the Contract`,
+    text: `View Contact Here: \n ${JSON.stringify(req.body)}`,
+  };
+  transporter.sendMail(msg, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent" + info.response);
+      res.send("POST SUCCESSFUL");
+    }
+  });
+});
+
+app.post("/contract-confirmed", (req, res) => {
+  const transporter = nodemailer.createTransport({
+    port: 465, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    auth: {
+      user: "luxe3sixty@gmail.com",
+      pass: "vohwuhayykgaqafk",
+    },
+    secure: true,
+  });
+
+  const msg = {
+    from: "Luxe3Sixty Portal < luxe3sixty@gmail.com>",
+    to: "luxe3sixty@gmail.com",
+    subject: `Contract Status is: [SIGNED] for #DATE-HERE`,
+    text: "Contract is signed. Next e-mail will have the contract.",
+  };
+  transporter.sendMail(msg, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+    }
+  });
+});
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
@@ -50,12 +110,14 @@ app.post("/newuser", (req, res) => {
   const name = bookingObj["clientName"];
   const email = bookingObj["userEmail"];
   const date = bookingObj["eventDate"];
-  const type = bookingObj.eventType;
-  const address = bookingObj.eventAddress;
-  const hours = bookingObj.hoursBooked;
-  const total = bookingObj.quoteValue;
-  const deposit = bookingObj.depositValue;
-  const remaining = total - deposit;
+  const type = bookingObj["eventType"];
+  const address = bookingObj["eventAddress"];
+  const hours = bookingObj["hoursBooked"];
+  const total = bookingObj["quoteValue"];
+  const deposit = bookingObj["depositValue"];
+  const remaining = parseFloat(total) - parseFloat(deposit);
+  const start = bookingObj["startTime"];
+  const end = bookingObj["endTime"];
 
   const transporter = nodemailer.createTransport({
     port: 465, // true for 465, false for other ports
@@ -71,25 +133,7 @@ app.post("/newuser", (req, res) => {
     from: "Luxe3Sixty Portal < luxe3sixty@gmail.com>",
     to: "luxe3sixty@gmail.com",
     subject: `New Booking for ${date}`,
-    text: `You have recieved a new booking! Here are the details: \n Client Name: ${name}\n Client Email: ${email} \n Event Date: ${date}\n Event Address: ${address} \n Event Type: ${type}\n Amount of hours: ${hours} \n Total Amount: ${total}\n Deposit: ${deposit} \n Remaining Due 1 Week Before: ${remaining}`,
-    // "\n" +
-    // "Client E-mail: " +
-    // "\n" +
-    // "Event Type: " +
-    // type +
-    // "\n" +
-    // "Venue Address: " +
-    // address +
-    // "\n" +
-    // "Hours Booked: " +
-    // hours +
-    // "\n" +
-    // "Total Amount " +
-    // quote +
-    // "\n" +
-    // "Deposit Paid: " +
-    // deposit +
-    // "\n",
+    text: `You have recieved a new booking! Here are the details: \n Client Name: ${name}\n Client Email: ${email} \n Event Date: ${date}\n Event Address: ${address} \n Event Type: ${type}\n Amount of hours: ${hours} \n Timing: ${start} to ${end} \n Total Amount: ${total}\n Deposit: ${deposit} \n Remaining Due 1 Week Before: ${remaining}`,
   };
   transporter.sendMail(msg, function (error, info) {
     if (error) {
