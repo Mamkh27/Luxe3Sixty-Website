@@ -17,6 +17,10 @@ async function apiRequest() {
   //   const remaining = document.getElementById("").value;
   try {
     const response = await fetch("https://luxe3sixty.herokuapp.com/newuser", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       method: "POST",
       body: JSON.stringify({
         clientName: "John Doe",

@@ -3,11 +3,14 @@ const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const cors = require("cors");
 const port = 3000; // you need to put your port number here
+const nodemailer = require("nodemailer");
+const bodyParser = require("body-parser");
 require("dotenv").config();
 
 app.use(cors());
-
-// // //Mongo DB
+app.use(bodyParser.json());
+app.use(express.json());
+//database demo
 // let db,
 //   dbConnectionStr = process.env.DB_STRING,
 //   dbName = "luxe-db";
@@ -18,6 +21,8 @@ app.use(cors());
 //     db = client.db(dbName);
 //   }
 // );
+
+//e-mail demo
 
 const user1 = {
   name: "John Doe",
@@ -35,21 +40,68 @@ const user1 = {
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-app.get("/bookedinfo", (req, res) => {
-  res.json(user1);
-});
-
-app.post("/newuser", (req, res) => {
-  db.collection("Users")
-    .insertOne({ name: req.body.clientName })
-    .then((result) => {
-      console.log("Added to database");
-    });
-});
-
 app.get("/booking.html", (req, res) => {
   res.sendFile(__dirname + "/public/booking.html");
 });
+
+app.post("/newuser", (req, res) => {
+  const bookingObj = req.body;
+
+  const name = bookingObj["clientName"];
+  const email = bookingObj["userEmail"];
+  const date = bookingObj["eventDate"];
+  const type = bookingObj.eventType;
+  const address = bookingObj.eventAddress;
+  const hours = bookingObj.hoursBooked;
+  const total = bookingObj.quoteValue;
+  const deposit = bookingObj.depositValue;
+  const remaining = total - deposit;
+
+  const transporter = nodemailer.createTransport({
+    port: 465, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    auth: {
+      user: "luxe3sixty@gmail.com",
+      pass: "brojjmkzwyridqut",
+    },
+    secure: true,
+  });
+
+  const msg = {
+    from: "Luxe3Sixty Portal < luxe3sixty@gmail.com>",
+    to: "luxe3sixty@gmail.com",
+    subject: `New Booking for ${date}`,
+    text: `You have recieved a new booking! Here are the details: \n Client Name: ${name}\n Client Email: ${email} \n Event Date: ${date}\n Event Address: ${address} \n Event Type: ${type}\n Amount of hours: ${hours} \n Total Amount: ${total}\n Deposit: ${deposit} \n Remaining Due 1 Week Before: ${remaining}`,
+    // "\n" +
+    // "Client E-mail: " +
+    // "\n" +
+    // "Event Type: " +
+    // type +
+    // "\n" +
+    // "Venue Address: " +
+    // address +
+    // "\n" +
+    // "Hours Booked: " +
+    // hours +
+    // "\n" +
+    // "Total Amount " +
+    // quote +
+    // "\n" +
+    // "Deposit Paid: " +
+    // deposit +
+    // "\n",
+  };
+  transporter.sendMail(msg, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent" + info.response);
+    }
+  });
+
+  res.json(user1);
+});
+
 function fileNotFound(req, res) {
   let url = req.url;
   res.type("text/plain");
