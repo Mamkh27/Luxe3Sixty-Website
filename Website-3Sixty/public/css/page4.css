@@ -5,7 +5,10 @@ body {
 :root {
   --primary-color: #013498;
 }
-
+mark {
+  background-color: yellow;
+  color: black;
+}
 .booking-section {
   display: block;
   margin: 0px;

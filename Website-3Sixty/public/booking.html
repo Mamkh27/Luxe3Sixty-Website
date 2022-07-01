@@ -10,7 +10,7 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <script type="text/javascript" src="booking.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  
@@ -144,11 +144,22 @@ Navigation" />
     </div>
     <form action="/contract-submitted" method="POST" enctype="application/x-www-form-urlencoded">
     <div class="top-div" id="terms">
-      <div class="inner-text">
+      <div id="this-form" class="inner-text">
       <div class="header"><h1>LUXE 3SIXTY VIDEO BOOTH RENTAL AGREEMENT</h1></div>
       <div class="parties">
         Video Booth Provider: Luxe 3Sixty ("Provider") <br>
-        <div class="name-contract">Client: <span>"Manprit Heer</span> ("Client")</div> <br>
+        <div class="name-contract">Client: <br></b>      <label for="email"><mark>Enter your name:</mark></label>
+          <input type="text" id="name-contract" name="name">
+          \n
+          <label for="email"><mark>Event Type:</mark></label>
+          <input type="text" id="type-contract" name="type">
+          \n
+          <label for="email"><mark>Your e-mail:</mark></label>
+          <input type="email" id="email-1-contract" name="email">
+          \n
+          <label for="email"><mark>Re-enter e-mail:</mark></label>
+          <input type="email" id="email-2-contract" name="email-valid">
+          \n ("Client")</div> \n
         <h3>The Provider and the Client are each referred to herein as a "Party" and collectively as the "Parties."</h3>
       </div>
       <div class="booth">
@@ -162,7 +173,6 @@ Navigation" />
         <h2>EVENT DETAILS</h2>
         The Provider shall provide the Video Booth for the following: 
           <div class="address-contract">Event Location: <span>Folsom Community Center</span></div> <br>
-          <div class="type-contract">Event Type: <span>First Birthday Party</span></div> <br>
           <div class="date-contract"> Event Date: <span>May 27, 2022</span></div> <br>
             Event Time: <div class="start-contract">7:00pm</div> to <div class="end-contract">9:00pm</div> <br>
     
@@ -170,33 +180,33 @@ Navigation" />
       <div class="payment">
         <h2>PAYMENT</h2>
         <div class="total-contract">The Client shall pay: $<span>320.00</span> for 2 Hours of Video Booth Service</div>
-        including travel fee. <br> <br>
-        <b>Non-Refundable Deposit.</b> As a part of this Agreement, the Client is required to pay a non-refundable deposit in the amount of 25% of the
+        including travel fee. \n
+        <b>Non-Refundable Deposit. \n As a part of this Agreement, the Client is required to pay a non-refundable deposit in the amount of 25% of the
         total that must be paid within 48 hours of this agreement
         signture. The Deposit shall be credited and
         deducted from the Rental Amount. Failure to send the deposit amount within 48 hours will result in the Provider dropping the hold
         on the Event Date and render this Agreement void. 
-<br> <br>
+        \n
 
-        <b> Due today: </b> <div class="deposit-contract"><i>"Booking Deposit": $<span>80.00</span> </i></div><br><br>
-        <div class="remaining-contract">"Remaining Balance": $<span>240.00</span> due May 20, 2022 </div><br><br>
+        <b> Due today: \n <div class="deposit-contract"><i>"Booking Deposit": $<span>80.00</span> </i></div>\n
+        <div class="remaining-contract">"Remaining Balance": $<span>240.00</span> due May 20, 2022 </div>\n
 
       
 
-        <br>
+        \n
 
-<b>Balance.</b> The Remaining Balance of the Rental Amount, less any Deposit, is
+        \n Balance.\n The Remaining Balance of the Rental Amount, less any Deposit, is
       due no fewer than 7 days before the date of the Event. If the client is booking after the
       one-week deadline, the payment must be paid in full upon signing of the
       contract. Customer agrees to the terms of the Agreement by manifesting
 acceptance of them using the “clickwrap procedure” at
-www.luxe3sixty.com/booking.html. <br><br>
+www.luxe3sixty.com/booking.html. \n
       
-      <b>Late Fee.</b> If the balance of the Rental Amount is not paid in full 1
+\nLate Fee.\n If the balance of the Rental Amount is not paid in full 1
       week prior to Event Date, there will be an additional late fee charge
       of $35.00. Addition to the late fee, there will be an automatic
       termination of service if the full amount is not paid 72 hours
-      (3 days) before said event.</p>
+      (3 days) before said event.\n
      
       </div>
 
@@ -205,36 +215,36 @@ www.luxe3sixty.com/booking.html. <br><br>
         Customer agrees to the terms of the Agreement by manifesting
       acceptance of them using the “clickwrap procedure” at www.luxe3sixty.com/booking.html. <br><br>
 
-      <b>Overage.</b> Any overage in time will be billed at the rate of $170/hour. Payment for any overage in time must be paid before additional hours will be provided. If the Event ends earlier than expected, no refund will be given. <br><br>
-      <b>Returned Checks.</b>  The Client will be under obligation to pay $100.00 for each returned check the Client has written for the purposes of the above listed payments.<br><br>
-      <b>Date Changes.</b> Any date change request must be made in writing at least
+      \nOverage.\n Any overage in time will be billed at the rate of $170/hour. Payment for any overage in time must be paid before additional hours will be provided. If the Event ends earlier than expected, no refund will be given. <br><br>
+      \nReturned Checks.\n  The Client will be under obligation to pay $100.00 for each returned check the Client has written for the purposes of the above listed payments.<br><br>
+      \nDate Changes.\n Any date change request must be made in writing at least
       5 days in advance of the Event. The possibility of a given date change is
       subject to availability and the receipt of a new agreement to
       replace this Agreement. Both Parties must consent to such date change.
-      <br><br>
-      <b>Rights to Content.</b> Rights to any and all media taken and generated
+      \n
+      \nRights to Content.\n Rights to any and all media taken and generated
       by the Video Booth shall be the property of the Client. If Client does not
       explicitly reject the usage of the content produced from the Booth, the
       Provider may use this content as marketing material and in any other forms
       as they wish. 
-<br><br>
-      <b>Video Booth Failure.</b> Should the Provider fail to provide a fully
+      \n
+      \nVideo Booth Failure.\nShould the Provider fail to provide a fully
       operational Video Booth for the Event, the Client's only remedy will
       be a full refund. In such an event, the Client waives any claim on
       further consequential damages or liability. If only partial services can
       be provided due to conditions 
       beyond the reasonable control of the Provider, the payments shall be negotiated at that time on a prorated basis.
-      <br><br>
-      <b>Operations.</b> The Provider will deliver, set up, and remove the Video
+      \n
+      \nOperations.\n The Provider will deliver, set up, and remove the Video
       Booth from the Event's location. The Provider agrees to have a
       qualified technician onsite to maintain and operate the Video Booth. 
-      Space and Placement.</b> The Client will arrange for appropriate space and
+      Space and Placement.\n The Client will arrange for appropriate space and
       access for the Photo Booth at the Event's venue along with necessary
       power. The Provider shall provide specifics related to space, shelter,
       power cords, and whatever else is deemed necessary must be met for the
-      setup conditions to be considered adequately met. Power will be supplied by the Client or the Venue at which the Booth is hosted at. <br><br>
-      <b>Damage to Equipment.</b> The Client will be responsible for any damage or loss to the Provider's equipment due to misuse by the Client or any guest of the Client and in the case of theft or damage (due, but not limited, to fire, flood, or earthquake). If the Provider judges the weather during the course of the Event to be inclement and thus unsafe, they reserve the right to cease operations for the safety of the equipment and of the Event's attendees, in which case no refund will be given.<br><br>
-      <b>Liability and Indemnification.</b> The Provider will not be liable for
+      setup conditions to be considered adequately met. Power will be supplied by the Client or the Venue at which the Booth is hosted at. \n
+      \nDamage to Equipment.\n The Client will be responsible for any damage or loss to the Provider's equipment due to misuse by the Client or any guest of the Client and in the case of theft or damage (due, but not limited, to fire, flood, or earthquake). If the Provider judges the weather during the course of the Event to be inclement and thus unsafe, they reserve the right to cease operations for the safety of the equipment and of the Event's attendees, in which case no refund will be given.\n
+      \nLiability and Indemnification.\n The Provider will not be liable for
       direct, indirect, incidental or consequential damages (including, but not
       limited to, damages for lost profits or increased expenses) with
       respect to any claim related to this Agreement and the services
@@ -244,12 +254,12 @@ www.luxe3sixty.com/booking.html. <br><br>
       Booth at the Event from its date and into the future. The Client will
       assume all legal fees claimed by third persons, provided that such loss or
       damage was not caused by the fault or negligence of the Provider or its
-      employees, agents, or subcontractors. <br><br>
+      employees, agents, or subcontractors. \n
       </div>
       <div class="governing-law">
         <h2>GOVERNING LAW</h2>
         This Agreement shall be construed and governed in accordance with
-        the laws located in the State where the Event is taking. Both Parties accept the terms once the Client has ticked the checkbox that confirms that they have read and agreed to this Agreement. <br><br>
+        the laws located in the State where the Event is taking. Both Parties accept the terms once the Client has ticked the checkbox that confirms that they have read and agreed to this Agreement. \n
       </div>
       
       <div class="entire-agreement">
@@ -263,18 +273,7 @@ www.luxe3sixty.com/booking.html. <br><br>
         <span id="checkSpan"><input id="payment" name="payment" type="checkbox" disabled name="terms"></span>
         <span class="redSmall">I confirm I have read and agree to the terms</span>
       </p>
-
-      <label for="email">Enter your name:</label>
-      <input type="text" id="name-contract" name="name">
-
-      <label for="email">Event Type:</label>
-      <input type="text" id="type-contract" name="type">
-
-      <label for="email">Your e-mail:</label>
-      <input type="email" id="email-1-contract" name="email">
-
-      <label for="email">Re-enter e-mail:</label>
-      <input type="email" id="email-2-contract" name="email-valid">
+      <div id="editor"></div>
 
       <div  class="button" id="submit">SUBMIT</div>
       <div id="pleaseTick"></div>
@@ -292,37 +291,37 @@ www.luxe3sixty.com/booking.html. <br><br>
 
   <div class="hours">
     <p class="hours-booked" >Client Name</p>
-    <p class="session-cost" id="client-name">Manprit Heer</p>
+    <p class="session-cost" id="client-name">NAME NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
     <p class="mileage-cost">Client E-mail</p>
-    <p class="gas-cost" id="client-email">exampletext@gmail.com</p>
+    <p class="gas-cost" id="client-email">EMAIL NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
     <p class="mileage-cost">Event Type</p>
-    <p class="gas-cost" id="event-type">Birthday Party</p>
+    <p class="gas-cost" id="event-type">EVENT TYPE NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
     <p class="mileage-cost">Address</p>
-    <p class="gas-cost" id="event-address">1000 Del Paso Road, Sacramento CA</p>
+    <p class="gas-cost" id="event-address">ADDRESS NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
     <p class="mileage-cost">Hours Booked</p>
-    <p class="gas-cost" id="hours-booked">2</p>
+    <p class="gas-cost" id="hours-booked">HOURS NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
-    <p class="mileage-cost">Deposit Paid</p>
-    <p class="gas-cost" id="deposit-paid">$83.60</p>
+    <p class="mileage-cost">Deposit Amount</p>
+    <p class="gas-cost" id="deposit-paid">DEPOSIT NOT AVAILABLE</p>
   </div>
 
   <div class="mileage">
     <p class="mileage-cost">Remaining Total</p>
-    <p class="gas-cost" id="remaining-total">$242.40</p>
+    <p class="gas-cost" id="remaining-total">REMAINING TOTAL NOT AVAILABLE</p>
   </div>
 
   <h2 class="hl"></h2>
@@ -496,7 +495,13 @@ www.luxe3sixty.com/booking.html. <br><br>
 
   $("#submit").click(function () {
     var tickChecked = $("#payment").is(":checked");
-    if (tickChecked) {
+    const nameBox = document.getElementById("name-contract").value.length == 0;
+    const email1Box = document.getElementById("type-contract").value.length == 0;
+    const email2Box = document.getElementById("email-1-contract").value.length == 0;
+    const eventTypeBox = document.getElementById("email-2-contract").value.length == 0;
+    let everythingFilled = !nameBox && !email1Box && !email2Box && !eventTypeBox;
+  
+    if (tickChecked && everythingFilled ) {
     document.getElementById("terms").style.display = "none";
     document.getElementById("blackout").style.display = "none";
     document.getElementById("booking").style.display = "none";
@@ -521,13 +526,14 @@ www.luxe3sixty.com/booking.html. <br><br>
 
     } else {
       $("#pleaseTick").replaceWith(
-        "<div class='small-text'>Please tick the checkbox before clicking 'Submit'</div>"
+        "<div class='small-text'>Please tick the checkbox and fill all the fields before clicking 'Submit'</div>"
       );
     }
   });
 });
 
 function progress(){
+ 
   document.getElementById("details").style.color = "white";
 max = 20;
 let anim = setInterval(() => {
